@@ -450,7 +450,7 @@
 
     <!-- BOCZNY WIDGET REKLAMOWY (McDonald's / rotujące sloty IG+tipply / wolny slot) - tylko na stronie głównej -->
     <!-- Wspólny kontener trzyma wszystkie kafelki reklamowe jeden pod drugim, z odstępem, i centruje całość w pionie -->
-    <div id="sideAdStack" class="hidden xl:flex fixed top-1/2 -translate-y-1/2 right-5 z-[80] w-64 flex-col gap-6">
+    <div id="sideAdStack" class="hidden xl:flex fixed top-1/2 -translate-y-1/2 right-5 z-[80] w-56 flex-col gap-4 max-h-[92vh] overflow-y-auto no-scrollbar py-1">
 
         <!-- Kafelek 1: statyczny obrazek McDonald's, osobno zamykany -->
         <div id="sideAdWidget2" class="side-ad-tile relative w-full rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800/80 bg-white/95 dark:bg-[#1a1c24]/95 backdrop-blur-md">
@@ -458,7 +458,7 @@
             <button onclick="closeSideAd2()" class="absolute top-2.5 right-2.5 z-20 w-6 h-6 rounded-full bg-black/40 hover:bg-black/60 text-white flex items-center justify-center text-xs transition-colors">
                 <i class="fas fa-times"></i>
             </button>
-            <img src="ad_mcdonalds.jpg" alt="Reklama McDonald's - Super Combo Extra" class="w-full h-auto block select-none">
+            <img src="ad_mcdonalds.jpg" alt="Reklama McDonald's - Super Combo Extra" class="w-full max-h-52 object-cover block select-none">
             <!-- Informacja o koszerności - widoczna wyłącznie w wersji hebrajskiej strony -->
             <p id="mcdonaldsKosherNote" dir="rtl" class="hidden text-center text-[11px] font-bold text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-950/30 py-1.5 px-2 leading-snug">
                 ❌ לא כשר <span class="font-normal text-gray-600 dark:text-gray-400">- מקדונלד'ס בפולין אינו כשר</span>
@@ -472,7 +472,7 @@
                 <i class="fas fa-times"></i>
             </button>
 
-            <div id="sideAdSlideContainer" class="relative w-full h-96"></div>
+            <div id="sideAdSlideContainer" class="relative w-full h-64"></div>
 
             <div id="sideAdDots" class="flex justify-center gap-1.5 py-3 bg-gray-50 dark:bg-black/20"></div>
         </div>
@@ -483,13 +483,13 @@
             <button onclick="closeSideAd3()" class="absolute top-2.5 right-2.5 z-20 w-6 h-6 rounded-full bg-black/40 hover:bg-black/60 text-white flex items-center justify-center text-xs transition-colors">
                 <i class="fas fa-times"></i>
             </button>
-            <div class="bg-gradient-to-br from-indigo-600 to-sky-500 flex flex-col items-center justify-center text-center px-4 py-8">
-                <div class="w-14 h-14 text-2xl rounded-full bg-white/20 ring-4 ring-white/60 shadow-lg mb-3 flex items-center justify-center">
+            <div class="bg-gradient-to-br from-indigo-600 to-sky-500 flex flex-col items-center justify-center text-center px-4 py-5">
+                <div class="w-11 h-11 text-lg rounded-full bg-white/20 ring-4 ring-white/60 shadow-lg mb-2.5 flex items-center justify-center">
                     <i class="fas fa-bullhorn text-white drop-shadow"></i>
                 </div>
                 <p class="text-white font-black text-sm leading-snug mb-1.5 drop-shadow-sm" data-i18n="side_ad_contact_title">Tu może być Twoja reklama</p>
-                <p class="text-white/90 text-[11px] leading-relaxed mb-4 max-w-[85%]" data-i18n="side_ad_contact_desc">Chcesz się tu pojawić? Napisz do mnie i ustalimy szczegóły.</p>
-                <button type="button" onclick="openDiscordModal(); trackIconClick('discord')" class="px-4 py-2 text-[11px] bg-white/95 hover:bg-white text-gray-900 font-black rounded-full shadow-md transition-all cursor-pointer" data-i18n="side_ad_contact_btn">Kontakt</button>
+                <p class="text-white/90 text-[11px] leading-relaxed mb-3 max-w-[85%]" data-i18n="side_ad_contact_desc">Chcesz się tu pojawić? Napisz do mnie i ustalimy szczegóły.</p>
+                <button type="button" onclick="openDiscordModal(); trackIconClick('discord')" class="px-4 py-1.5 text-[11px] bg-white/95 hover:bg-white text-gray-900 font-black rounded-full shadow-md transition-all cursor-pointer" data-i18n="side_ad_contact_btn">Kontakt</button>
             </div>
         </div>
     </div>
@@ -2641,6 +2641,7 @@
             }
 
             const everLikedAtLoad = JSON.parse(localStorage.getItem('justAndrewEverLikedPhotos') || '[]');
+            checkLikeBadges(everLikedAtLoad.length);
             checkPiwoszBadge(everLikedAtLoad);
 
             // Odznaka "Nocna Zmiana": wejście na stronę między 00:00 a 04:59 czasu lokalnego użytkownika
@@ -3349,7 +3350,7 @@
             const titleSize = isModal ? 'text-lg' : 'text-sm';
             const descSize = isModal ? 'text-sm' : 'text-[11px]';
             const btnSize = isModal ? 'px-6 py-3 text-sm' : 'px-4 py-2 text-[11px]';
-            const padding = isModal ? 'px-8 py-8' : 'px-4 py-6';
+            const padding = isModal ? 'px-8 py-8' : 'px-4 py-5';
 
             const avatar = slide.image
                 ? `<img src="${slide.image}" alt="" class="${isModal ? 'w-20 h-20' : 'w-14 h-14'} rounded-full object-cover ring-4 ring-white/60 shadow-lg mb-3">`
