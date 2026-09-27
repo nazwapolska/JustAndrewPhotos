@@ -1858,7 +1858,7 @@
         }
 
         // Zwraca średni procent graczy, którzy odblokowali daną odznakę (0-100), albo null,
-        // jeśli statystyki jeszcze nie zostały wczytane z bazy. Made by Press633
+        // jeśli statystyki jeszcze nie zostały wczytane z bazy.
         function getBadgeUnlockPct(id) {
             if (!totalVisitorsCount) return null;
             const count = badgeStatsData[id] || 0;
@@ -2863,12 +2863,6 @@
                 title: { pl: 'Serce', en: 'Heart', de: 'Herz', ru: 'Сердечко', he: 'לב' },
                 tags: { pl: '#uwu #love #serce #serduszko', en: '#uwu #love #heart', de: '#uwu #love #herz', ru: '#uwu #love #сердце', he: '#uwu #love #לב' },
                 desc: { pl: 'Dla widzów.', en: 'For the viewers.', de: 'Für die Zuschauer.', ru: 'Для зрителей.', he: 'לצופים.' }
-            },
-            { 
-                src: 'image10.png', cat: 'Stream', globalLikes: 0,
-                title: { pl: 'Przyjaciele', en: 'Friends', de: 'Freunde', ru: 'Друзья', he: 'חברים' },
-                tags: { pl: '#friends #party #ola', en: '#friends #party #ola', de: '#friends #party #ola', ru: '#friends #party #ola', he: '#friends #party #ola' },
-                desc: { pl: 'Wspólny czas.', en: 'Time together.', de: 'Gemeinsame Zeit.', ru: 'Время вместе.', he: 'זמן ביחד.' }
             },
             { 
                 src: 'image11.png', cat: 'Stream', globalLikes: 0,
